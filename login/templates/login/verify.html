@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quiz</title>
+	{% load static %}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"><script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href={% static 'quiz/profile.css' %}>
+	<style type="text/css">
+
+		body {
+    	background-image: linear-gradient(to right, rgb(0, 0, 255), rgb(255, 128, 128));
+		}
+		.bg-info{
+			background-color:lightcoral;
+		}
+		        html,body {
+            padding: 0;
+            margin: 0;
+        }
+
+
+        footer {
+
+            width: 100%;
+            bottom: 0;
+            position: fixed;
+        }
+        .fa {
+			padding: 5px;
+			font-size: 10px;
+			width: 15px;
+			text-align: center;
+			text-decoration: none;
+			border-radius:10px;
+		}
+
+		/* Add a hover effect if you want */
+		.fa:hover {
+			opacity: 0.7;
+		}
+
+		/* Set a specific color for each brand */
+
+		/* Facebook */
+		.fa-facebook {
+			background: #3B5998;
+			color: white;
+		}
+
+
+	</style>
+</head>
+<body>
+<div class="container" style="justify-content:center; margin-top:20%;">
+	 <div class="row">
+        <div class="card-header text-white bg-info mb-3" style="text-align:left;">
+			<h5>{{ message|safe }}</h5>
+        </div>
+	 </div>
+</div>
+<footer>
+    <h6>
+		<strong>
+    Developer-: Harsh Srivastava(OSDG Secretary)
+    <a href="https://www.facebook.com/harsh.srivastava.7374" class="fa fa-facebook"></a>
+		</strong>
+    </h6>
+</footer>
+<div id="container-floating">
+
+  <div class="nd4 nds" data-toggle="tooltip" data-placement="left" data-original-title="Reminder"><a href="https://www.facebook.com/harsh.srivastava.7374">
+      <img class="reminder" src="https://instagram.fbom1-1.fna.fbcdn.net/vp/d031a62f72dc61d4d5ee7bd7fcde1df8/5C2F6958/t51.2885-19/s320x320/19761689_822203141288889_1485469513687236608_n.jpg" style="
+    height: 50px;
+    width: 50px;
+    border-radius: 30px;
+"></a></div>
+  <div class="nd1 nds" data-toggle="tooltip" data-placement="left" data-original-title="contract@gmail.com"><img class="reminder">
+      <a href="/scorecard/" ><p style="font-size:15px;" class="letter">Score</p></a>
+  </div>
+  <div class="nd3 nds" data-toggle="tooltip" data-placement="left" data-original-title="Edoardo@live.it"><img class="reminder">
+      <a href="/rules/" ><p style="font-size:15px;" class="letter">Rules</p></a>
+  </div>
+
+  <div id="floating-button" data-toggle="tooltip" data-placement="left" data-original-title="Create" onclick="newmail()">
+    <p class="plus">+</p>
+    <img class="edit" src="http://ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/1x/bt_compose2_1x.png">
+  </div>
+
+</div>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
+</body>
