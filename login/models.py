@@ -7,5 +7,7 @@ from django.contrib.auth.models import User
 class Profile(models.Model):
     user =models.OneToOneField(User,on_delete=models.CASCADE)
     email = models.EmailField(max_length=70, blank=False, unique=True)
+    
+
     def __str__(self):
-        return ("sd	")
+        return (user.first_name)

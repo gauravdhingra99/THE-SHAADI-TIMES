@@ -14,7 +14,7 @@ from django.core.mail import EmailMessage
 
 
 def home(request):
-    return render(request,"login/index.html",{})
+    return render(request,"user/index.html",{})
 
 
 
@@ -78,6 +78,7 @@ def login(request):
             return HttpResponse("Sorry you can't participate in this contest.")
         else:
             return HttpResponse("Sorry you can't participate in this contest.")
+    return  render(request,"login/login.html")
 
 
 
