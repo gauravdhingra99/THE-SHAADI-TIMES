@@ -14,7 +14,7 @@ from django.core.mail import EmailMessage
 
 
 def home(request):
-    return render(request,"user/index.html",{})
+ return render(request,"login/index.html",{})
 
 
 
@@ -33,20 +33,20 @@ def signup(request):
             print("andar")
             try:
                 user = User.objects.create_user(username=username,password=password1,first_name=firstname,last_name=lastname,email=email)
-                print("dnmf",user)
+                #print("dnmf",user)
                 user.is_active = False
                 user.save()
-                print("mera",user)
+                #print("mera",user)
                 current_site = get_current_site(request)
-                print(current_site)
+                #print(current_site)
                 mail_subject = 'Activate your blog account.'
                 message = render_to_string('acc_active_email.html', {'user': user, 'domain': current_site.domain,
                     'uid': str(urlsafe_base64_encode(force_bytes(user.pk))), 'token': account_activation_token.make_token(user), })
-                print(message)
+                #print(message)
                 email = EmailMessage(mail_subject, message, to=[email])
-                print(email)
+                #print(email)
                 email.send()
-                print("bejdeya")
+                #print("bejdeya")
                 return  render(request,"login/login.html",{"message":"Email-Verification code has been sent to your mail. Please veriy and then Login to continue."})
             except:
                 return  render(request,"login/signup.html",{"message":"Username with this name already exists."})
@@ -61,17 +61,21 @@ def login(request):
         logout(request)
         print("user logged out")
     else:
-        user=request.POST.get("email")
+        user=request.POST.get("username")
         password=request.POST.get("password")
         print(request.POST)
         if not User.objects.filter(username=user).exists():
-            return  render(request,"login/signup.html",{"message":"Sorry User with this username does not exists."})
+            return  render(request,"login/login.html",{"message":"Sorry User with this username does not exists."})
         user_obj=authenticate(username=user,password=password)
+        print(user_obj)
         if user_obj is None:
             return  render(request,"login/login.html",{"message":"Wrong Password Click <a href='/home/'>Here</a> to try again."})
         if not user_obj.is_staff:
             return render(request, "login/login.html",{"message": "Please Confirm  your email to login."})
         elif user_obj.is_staff:
+            print('aaaaaaaaaaaaaa')
+            print(request)
+            print(user_obj)
             login(request,user_obj)
             return redirect("/welcome/")
         elif user_obj.is_staff==False :
@@ -105,72 +109,3 @@ def activate(request, uidb64, token):
 
 
 
-
-# def welcome(request):
-#     return render(request,"login/try.html",{})
-#
-#
-# def Signup(request):
-#     if request.method=="POST":
-#         print(request.POST)
-#         phonenum = request.POST.get("phone")
-#         print(phonenum)
-#         checkobj=Profile.objects.filter(mobile=phonenum,IsVerified=True).exists()
-#         if checkobj:
-#             return render(request,'login/signup.html',{"message":"Already Registered"})
-#         key=GenrateOtp(phonenum)
-#         phone,created=Profile.objects.update_or_create(mobile=phonenum,Otp=key)
-#         print(key)
-#         phone.save()
-#     return render(request,"login/verifyotp.html",{'message':'Otp Sent Sucessfully'})
-#
-# def Verify(request):
-#     if request.method=='POST':
-#         phonenum=request.POST.get('phone')
-#         otp=request.POST.get('otp')
-#         username=request.POST.get('username')
-#         password=request.POST.get('password')
-#         print(otp,phonenum)
-#         Phoneobj=Profile.objects.filter(mobile=phonenum)
-#         if Phoneobj.exists():
-#             phone=Phoneobj.first()
-#             print("databasewali",phone.Otp)
-#             print(phone.Otp == otp)
-#             if(phone.Otp == otp):
-#                 phone.IsVerified = True
-#                 phone.save()
-#                 return render(request,"login/register.html",{'phone':phonenum})
-#                 print("Bhai phone nu de dede",phonenum)
-#             else:
-#                 return render(request,"login/verifyotp.html",{'message':'Otp  Not Verified'})
-#             print(username,password,phonenum)
-#             user=User.objects.create_user(username=username,password=password)
-#             user.save()
-#             obj,created=Profile.objects.get_or_create(user=user,mobile=phonenum,IsVerified=True)
-#             if created:
-#                 Profile.objects.get(mobile=phonenum).delete()
-#             obj.save()
-#             return render(request,"login/index.html",{'message':'Otp  Not Verified'})
-
-
-# def Register(request):
-#     if request.method=='POST':
-#         phone=request.POST.get('phone')
-#         password=request.POST.get('password')
-#         print(username,password)
-#         Phoneobj=Profile.objects.filter(mobile=phone)
-#         if not Phoneobj.exists():
-#             return render(request,'login/signup.html',{"message":"Phone number Not Verified"})
-#         obj,created=User.objects.create_user(username=phone,password=None)
-# def return_data(request):
-#     is_private = request.POST.get('is_private', False)
-#     return HttpResponse(request.POST.get('text', False))
-
-
-
-def GenrateOtp(phonenum):
-    if phonenum:
-        key=random.randint(999,99999)
-        return key
-    else:
-        return False

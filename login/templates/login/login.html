@@ -1,112 +1,205 @@
-<!DOCTYPE html>
-<html lang="en">
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
 <head>
-	<title>Login V5</title>
-	<meta charset="UTF-8">
-	{% load staticfiles %}
+<title>Marital an Wedding Category Flat Bootstarp Resposive Website Template | Login :: w3layouts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% load staticfiles %}
 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href={% static "/login/images/icons/favicon.ico" %} />
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href={% static "/login/vendor/bootstrap/css/bootstrap.min.css" %}
-	/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href={% static "/login/fonts/font-awesome-4.7.0/css/font-awesome.min.css" %} />
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href={% static  "/login/fonts/Linearicons-Free-v1.0.0/icon-font.min.css" %} />
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href={% static "/login/vendor/animate/animate.css" %} />
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href={% static "/login/vendor/css-hamburgers/hamburgers.min.css" %} />
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href={% static "/login/vendor/animsition/css/animsition.min.css" %} />
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href={% static  "/login/vendor/select2/select2.min.css" %} />
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href={% static "/login/vendor/daterangepicker/daterangepicker.css" %} />
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href={% static "/login/css/util.css" %}/>
-	<link rel="stylesheet" type="text/css" href={% static "/login/css/main.css" %}/>
-
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Marital Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href={% static "/login/css/bootstrap-3.1.1.min.css" %} rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src= {% static "/login/js/jquery.min.js" %}></script>
+<script src={% static  "/login/js/bootstrap.min.js" %}></script>
+<!-- Custom Theme files -->
+<link href={% static "/login/css/style.css" %} rel='stylesheet' type='text/css' />
+<link href='//fonts.googleapis.com/css?family=Oswald:300,400,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
+<!----font-Awesome----->
+<link href={% static "/login/css/font-awesome.css" %} rel="stylesheet"> 
+<!----font-Awesome----->
+<script>
+$(document).ready(function(){
+    $(".dropdown").hover(            
+        function() {
+            $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
+            $(this).toggleClass('open');        
+        },
+        function() {
+            $('.dropdown-menu', this).stop( true, true ).slideUp("fast");
+            $(this).toggleClass('open');       
+        }
+    );
+});
+</script>
 </head>
 <body>
-
-	<div class="limiter">
-		<div class="container-login100" style="background-image: url( {% static  '/login/images/bg-01.jpg' %});"  >
-			<div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
-				<form class="login100-form validate-form flex-sb flex-w" method="POST" action="/login/">
-					{% csrf_token %}
-					<h3>{{ message|safe }}</h3>
-					<span class="login100-form-title p-b-53">
-						Sign In With
-					</span>
-
-					<div class="p-t-31 p-b-9">
-						<span class="txt1">
-							Email:
-						</span>
-					</div>
-					<div class="wrap-input100 validate-input" data-validate = "Email is required">
-						<input class="input100" type="email" name="email" >
-						<span class="focus-input100"></span>
-					</div>
-
-
-					<div class="p-t-13 p-b-9">
-						<span class="txt1">
-							Password
-						</span>
-
-						<a href="#" class="txt2 bo1 m-l-5">
-							Forgot?
-						</a>
-					</div>
-					<div class="wrap-input100 validate-input" data-validate = "Password1 is required">
-						<input class="input100" type="password" name="pass1" >
-						<span class="focus-input100"></span>
-					</div>
-
-
-					<div class="container-login100-form-btn m-t-17">
-						<button class="login100-form-btn">
-							Sign In
-						</button>
-					</div>
-
-					<div class="w-full text-center p-t-55">
-						<span class="txt2">
-							Not a member?
-						</span>
-
-						<a href="login/signup.html" class="txt2 bo1">
-							Sign up now
-						</a>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-
-
-	<div id="dropDownSelect1"></div>
-
-	<script src='{% static "login/vendor/jquery/jquery-3.2.1.min.js" %}'></script> -->
-<!--===============================================================================================-->
-	<script src='{% static "login/vendor/animsition/js/animsition.min.js" %}'></script>
-<!--===============================================================================================-->
-	<script src='{% static "login/vendor/bootstrap/js/popper.js" %}'></script>
-	<script src='{% static "login/vendor/bootstrap/js/bootstrap.min.js" %}'></script>
-<!--===============================================================================================-->
-	<script src='{% static "login/vendor/select2/select2.min.js" %}'></script>
-<!--===============================================================================================-->
-	<script src='{% static "login/vendor/daterangepicker/moment.min.js" %}'></script>
-	<script src='{% static "login/vendor/daterangepicker/daterangepicker.js" %}'></script>
-<!--===============================================================================================-->
-	<script src='{% static "login/vendor/countdowntime/countdowntime.js" %}'></script>
-<!--===============================================================================================-->
-	<script src='{% static "login/js/main.js" %}'></script>
-
-
+<!-- ============================  Navigation Start =========================== -->
+ <div class="navbar navbar-inverse-blue navbar">
+    <!--<div class="navbar navbar-inverse-blue navbar-fixed-top">-->
+      <div class="navbar-inner navbar-inner_1">
+        <div class="container">
+           <div class="navigation">
+             <nav id="colorNav">
+			   <ul>
+				<li class="green">
+				  <a href="#" class="icon-home"></a>
+				  <ul>
+					<li><a href="login/login.html">Login</a></li>
+					<li><a href="register.html">Register</a></li>
+					<li><a href="index.html">Logout</a></li>
+				  </ul>
+				</li>
+			   </ul>
+             </nav>
+           </div>
+           <a class="brand" href="index.html"><img src={% static "login/images/logo.png" %} alt="logo"></a>
+           <div class="pull-right">
+          	<nav class="navbar nav_bottom" role="navigation">
+ 
+		 <!-- Brand and toggle get grouped for better mobile display -->
+		  <div class="navbar-header nav_2">
+		      <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">Menu
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="#"></a>
+		   </div> 
+		   <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+		        <ul class="nav navbar-nav nav_1">
+		            <li><a href="index.html">Home</a></li>
+		            <li><a href="about.html">About</a></li>
+		    		<li class="dropdown">
+		              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Matches<span class="caret"></span></a>
+		              <ul class="dropdown-menu" role="menu">
+		                <li><a href="matches.html">New Matches</a></li>
+		                <li><a href="viewed-profile.html">Who Viewed my Profile</a></li>
+		                <li><a href="viewed-not_contacted.html">Viewed & not Contacted</a></li>
+		                <li><a href="members.html">Premium Members</a></li>
+		                <li><a href="shortlisted.html">Shortlisted Profile</a></li>
+		              </ul>
+		            </li>
+					<li class="dropdown">
+		              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search<span class="caret"></span></a>
+		              <ul class="dropdown-menu" role="menu">
+		                <li><a href="search.html">Regular Search</a></li>
+		                <li><a href="profile.html">Recently Viewed Profiles</a></li>
+		                <li><a href="search-id.html">Search By Profile ID</a></li>
+		                <li><a href="faq.html">Faq</a></li>
+		                <li><a href="shortcodes.html">Shortcodes</a></li>
+		              </ul>
+		            </li>
+		            <li class="dropdown">
+		              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Messages<span class="caret"></span></a>
+		              <ul class="dropdown-menu" role="menu">
+		                <li><a href="inbox.html">Inbox</a></li>
+		                <li><a href="inbox.html">New</a></li>
+		                <li><a href="inbox.html">Accepted</a></li>
+		                <li><a href="sent.html">Sent</a></li>
+		                <li><a href="upgrade.html">Upgrade</a></li>
+		              </ul>
+		            </li>
+		            <li class="last"><a href="contact.html">Contacts</a></li>
+		        </ul>
+		     </div><!-- /.navbar-collapse -->
+		    </nav>
+		   </div> <!-- end pull-right -->
+          <div class="clearfix"> </div>
+        </div> <!-- end container -->
+      </div> <!-- end navbar-inner -->
+    </div> <!-- end navbar-inverse-blue -->
+<!-- ============================  Navigation End ============================ -->
+<div class="grid_3">
+  <div class="container">
+   <div class="breadcrumb1">
+     <ul>
+        <a href="index.html"><i class="fa fa-home home_1"></i></a>
+        <span class="divider">&nbsp;|&nbsp;</span>
+        <li class="current-page">Login</li>
+     </ul>
+   </div>
+   <div class="services">
+   	  <div class="col-sm-6 login_left">
+	   <form method="POST" action="/welcome/">
+		{% csrf_token %}
+		<h3>{{ message|safe }}</h3>
+  	    <div class="form-item form-type-textfield form-item-name">
+	      <label for="edit-name">Username <span class="form-required" title="This field is required.">*</span></label>
+	      <input type="text" id="edit-name" name="username" value="" size="60" maxlength="60" class="form-text required">
+	    </div>
+	    <div class="form-item form-type-password form-item-pass">
+	      <label for="edit-pass">Password <span class="form-required" title="This field is required.">*</span></label>
+	      <input type="password" id="edit-pass" name="pass1" size="60" maxlength="128" class="form-text required">
+	    </div>
+	    <div class="form-actions">
+	    	<input type="submit" id="edit-submit" name="op" value="Log in" class="btn_1 submit">
+	    </div>
+	   </form>
+	  </div>
+	  <div class="col-sm-6">
+	    <ul class="sharing">
+			<li><a href="#" class="facebook" title="Facebook"><i class="fa fa-boxed fa-fw fa-facebook"></i> Share on Facebook</a></li>
+		  	<li><a href="#" class="twitter" title="Twitter"><i class="fa fa-boxed fa-fw fa-twitter"></i> Tweet</a></li>
+		  	<li><a href="#" class="google" title="Google"><i class="fa fa-boxed fa-fw fa-google-plus"></i> Share on Google+</a></li>
+		  	<li><a href="#" class="linkedin" title="Linkedin"><i class="fa fa-boxed fa-fw fa-linkedin"></i> Share on LinkedIn</a></li>
+		  	<li><a href="#" class="mail" title="Email"><i class="fa fa-boxed fa-fw fa-envelope-o"></i> E-mail</a></li>
+		</ul>
+	  </div>
+	  <div class="clearfix"> </div>
+   </div>
+  </div>
+</div>
+<div class="map">
+	<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3150859.767904157!2d-96.62081048651531!3d39.536794757966845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1408111832978"> </iframe>
+</div>
+<div class="footer">
+    	<div class="container">
+    		<div class="col-md-4 col_2">
+    			<h4>About Us</h4>
+    			<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."</p>
+    		</div>
+    		<div class="col-md-2 col_2">
+    			<h4>Help & Support</h4>
+    			<ul class="footer_links">
+    				<li><a href="#">24x7 Live help</a></li>
+    				<li><a href="contact.html">Contact us</a></li>
+    				<li><a href="#">Feedback</a></li>
+    				<li><a href="faq.html">FAQs</a></li>
+    			</ul>
+    		</div>
+    		<div class="col-md-2 col_2">
+    			<h4>Quick Links</h4>
+    			<ul class="footer_links">
+    				<li><a href="privacy.html">Privacy Policy</a></li>
+    				<li><a href="terms.html">Terms and Conditions</a></li>
+    				<li><a href="services.html">Services</a></li>
+    			</ul>
+    		</div>
+    		<div class="col-md-2 col_2">
+    			<h4>Social</h4>
+    			<ul class="footer_social">
+				  <li><a href="#"><i class="fa fa-facebook fa1"> </i></a></li>
+				  <li><a href="#"><i class="fa fa-twitter fa1"> </i></a></li>
+				  <li><a href="#"><i class="fa fa-google-plus fa1"> </i></a></li>
+				  <li><a href="#"><i class="fa fa-youtube fa1"> </i></a></li>
+			    </ul>
+    		</div>
+    		<div class="clearfix"> </div>
+    		<div class="copy">
+		       <p>Copyright © 2015 Marital . All Rights Reserved  | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+	        </div>
+      </div>
+</div>
 </body>
-</html>
+</html>	
